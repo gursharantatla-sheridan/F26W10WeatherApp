@@ -1,10 +1,10 @@
 <Shell
     x:Class="F26W10WeatherApp.AppShell"
     xmlns:local="clr-namespace:F26W10WeatherApp"
-    Title="F26W10WeatherApp">
+    Title="My Weather App">
 
     <ShellContent
-        Title="Home"
+        Title="My Weather App"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
