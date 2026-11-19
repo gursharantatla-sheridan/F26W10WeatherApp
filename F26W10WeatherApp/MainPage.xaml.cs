@@ -18,8 +18,11 @@
             var weatherData = await WeatherProxy.GetWeatherAsync(url);
 
             CityLbl.Text = weatherData.name;
-            TemperatureLbl.Text = weatherData.main.temp.ToString();
-            ConditionsLbl.Text = weatherData.weather[0].description;
+            TemperatureLbl.Text = weatherData.main.temp.ToString("F0") + "\u00B0C";
+            ConditionsLbl.Text = weatherData.weather[0].description.ToUpper();
+
+            string iconUrl = $"https://openweathermap.org/payload/api/media/file/{weatherData.weather[0].icon}.png";
+            WeatherImg.Source = ImageSource.FromUri(new Uri(iconUrl));
         }
     }
 }
